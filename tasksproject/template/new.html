@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+</head>
+<body>
+<div class="container">
+<div>
+    <a href="" ><img src="{% static 'img/banner.jpg' %}" style="height:600px;width:1140px;"></a>
+</div>
+</div>
+    <div style="text-align:center;padding:10px;">
+        <a href="{% url 'dependantfield' %}" class="btn btn-secondary" style="background-color:#659EC7;" ><b>Create a form</b></a>
+
+</div>
+</body>
+</html>
+{% endblock %}

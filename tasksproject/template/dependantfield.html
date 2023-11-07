@@ -1,0 +1,76 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+  <style>
+    h1{text-align:center;border:1px solid black}
+    body{padding:10px;}
+    input{padding:6px;}
+    select{padding:6px;}
+
+  </style>
+</head>
+<h1>Form</h1>
+<body>
+<form method="post" action="last" >
+  {% csrf_token %}
+  <label>Name:</label>
+  <input style="margin-left:80px;" type="text" name="name" placeholder="Enter your name"><br>
+  {% for msg in messages %}
+{{msg}}
+{% endfor %}<br>
+    <label>D.O.B:</label>
+  <input style="margin-left:77px;width:162px;" type="date" name="date" placeholder="Enter your dob"><br>
+  <label>Age:</label>
+  <input style="margin-left:92px;" type="number" name="age" placeholder="Enter your age"><br>
+    <label>Gender:</label>
+  <input style="margin-left:70px;" type="radio" name="gender" >Male
+  <input type="radio" name="gender" >Female
+  <input type="radio" name="gender" >Other<br>
+    <label>Phone number:</label>
+  <input style="margin-left:26px;" type="text" name="pnumber" placeholder="Enter your phone number"><br>
+    <label>Mail id:</label>
+  <input style="margin-left:72px;" type="text" name="namee" placeholder="Enter your email id"><br>
+    <label>Address:</label>
+  <input style="margin-left:66px;" type="text" name="address" placeholder="Enter your address"><br>
+
+  <label>District:</label>
+  <select id="country" name="country" style="margin-left:70px;width:178px;text-align:center;" >
+    <option value="0"></option>
+    {% for i in country %}
+          <option value="{{i.id}}">{{i.name}}</option>
+    {% endfor %}
+  </select>
+  <br>
+  <label>Sub areas:</label>
+  <select id="state" name="state" style="margin-left:56px;width:178px;text-align:center;">
+
+  </select>
+  <br>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="{% static 'js/dependant.js' %}"></script>
+
+  <label>Account type:</label>
+  <select style="margin-left:32px;width:178px;text-align:center;" name="Account type">
+    <option value=""></option>
+    <option value="Savings account">Savings account</option>
+    <option value="Current account">Current account</option>
+    <option value="Personal account">Personal account</option>
+  </select><br>
+    <label>Materials provide:</label>
+  <input type="checkbox" name="Debit card">Debit card
+   <input type="checkbox" name="Credit card">Credit card
+   <input type="checkbox" name="Cheque book">Cheque book<br>
+<div style="padding:4px;">
+  <input type="submit" style="background-color:DarkCyan;color:white;padding:5px;">
+</div>
+<div style="padding:4px;">
+  <input type="button" value="Logout" style="background-color:Gray;color:white;padding:5px;">
+</div>
+</form>
+</body>
+</html>

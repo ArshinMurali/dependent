@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h1{color:black;border:1px solid black;background-color:#ce93d8;}
+    body{background-color:#ce93d8;padding:20px;}
+    label{color:black;}
+    a{color:black;}
+    input{padding:4px;}
+</style>
+<h1 style="text-align:center;">Login</h1>
+<body>
+<form method="post" action="logins">
+    {% csrf_token %}
+<label><b>Username:</b></label>
+<input type="text" name="username" placeholder="Enter your username"><br>
+<label><b>Password:</b></label>
+<input style="margin-left:3.5px;" type="password" name="password" placeholder="Enter your password"><br>
+<input type="submit" name="Submit" style="color:white;background-color:#7b1fa2;border-radius:9px;padding:9px;" ><br>
+</form>
+{% for msg in messages %}
+{{ msg }}
+{% endfor %}
+</body>
+</html>
